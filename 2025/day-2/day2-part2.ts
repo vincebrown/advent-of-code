@@ -17,19 +17,6 @@
 //     824824821-824824827 now has one invalid ID, 824824824.
 //     2121212118-2121212124 now has one invalid ID, 2121212121.
 // Adding up all the invalid IDs in this example produces 4174379265.
-
-
-
-// THOUGHTS
-//
-// To determine if a number's digit string consists of a repeated sequence (at least twice),
-// think in terms of substring repetition rather than search algorithms like KMP.
-// The "pattern" is the base substring that repeats to form the entire string—start
-// by identifying possible pattern lengths that divide the total length evenly
-// (e.g., for length 8, check divisors 1,2,4). For each divisor d, extract the first d characters
-// as the candidate pattern and verify if repeating it (total_length / d) times matches the full string.
-// The "beginning" is always position 0, and the "end" is the pattern's boundary;
-// if any repetition holds, it's invalid. This is efficient and avoids complex searches
 const input = Bun.file(`${import.meta.dir}/input.txt`)
 const contents = await input.text()
 
